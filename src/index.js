@@ -1,12 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './App'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const firebase = require("firebase")
+require("firebase/firestore")
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDC9ZfKcbsZRRlbtA66zsAFA3Y4cNf3Vzo",
+    authDomain: "chats-3a183.firebaseapp.com",
+    databaseURL: "https://chats-3a183.firebaseio.com",
+    projectId: "chats-3a183",
+    storageBucket: "chats-3a183.appspot.com",
+    messagingSenderId: "631537828753",
+    appId: "1:631537828753:web:97a5425600b4cb20f2d030",
+    measurementId: "G-GHTHH5PD0J"
+}
+
+firebase.initializeApp(firebaseConfig)
+
+
+ReactDOM.render(
+    <App />,
+    document.querySelector("#root")
+)
